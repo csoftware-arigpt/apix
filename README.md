@@ -12,7 +12,11 @@
 ## Install
 
 ```bash
-npm install -g https://github.com/csoftware-arigpt/apix.git
+git clone https://github.com/csoftware-arigpt/apix
+cd apix
+npm install
+npm run prepare
+npm link
 ```
 
 ## Quick start
