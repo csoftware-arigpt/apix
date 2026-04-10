@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-npm install -g apix
+npm install -g apix-mcp
 ```
 
 Or run directly with `npx`:

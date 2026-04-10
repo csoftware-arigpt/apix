@@ -1,5 +1,5 @@
 {
-  "name": "apix",
+  "name": "apix-mcp",
   "version": "0.1.0",
   "description": "Turn any OpenAPI spec into an AI-ready MCP server in 30 seconds",
   "type": "module",
