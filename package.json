@@ -9,6 +9,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "prepare": "tsc",
     "dev": "tsx watch src/cli/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
