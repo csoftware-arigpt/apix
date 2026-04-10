@@ -8,12 +8,12 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx tsc",
-    "prepare": "npx tsc",
-    "dev": "npx tsx watch src/cli/index.ts",
+    "build": "tsc",
+    "prepare": "tsc",
+    "dev": "tsx watch src/cli/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "npx tsc --noEmit"
+    "lint": "tsc --noEmit"
   },
   "keywords": ["openapi", "mcp", "codegen", "typescript", "ai", "cli"],
   "author": "",
