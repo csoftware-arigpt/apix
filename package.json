@@ -1,0 +1,41 @@
+{
+  "name": "apix",
+  "version": "0.1.0",
+  "description": "Turn any OpenAPI spec into an AI-ready MCP server in 30 seconds",
+  "type": "module",
+  "bin": {
+    "apix": "dist/cli/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/cli/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": ["openapi", "mcp", "codegen", "typescript", "ai", "cli"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.1",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "express": "^4.21.2",
+    "handlebars": "^4.7.8",
+    "json-schema-faker": "^0.5.6",
+    "ora": "^8.2.0",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.14.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
