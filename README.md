@@ -12,13 +12,7 @@
 ## Install
 
 ```bash
-npm install -g apix-mcp
-```
-
-Or run directly with `npx`:
-
-```bash
-npx apix init https://api.example.com/openapi.json
+npm install -g https://github.com/csoftware-arigpt/apix.git
 ```
 
 ## Quick start
