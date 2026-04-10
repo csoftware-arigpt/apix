@@ -16,17 +16,24 @@ program
 
 program
   .command('init')
-  .description('Fetch spec, generate TypeScript client + MCP server')
+  .description('Fetch spec, generate client(s) + MCP server')
   .argument('<spec>', 'OpenAPI spec URL or local file path')
   .option('-o, --output <dir>', 'Output directory')
   .option('-t, --tags <tags>', 'Filter by tags (comma-separated)')
+  .option(
+    '-l, --languages <langs>',
+    'Client languages (comma-separated): typescript, python',
+    'typescript'
+  )
   .action(initCommand);
 
 program
   .command('generate')
-  .description('Generate TypeScript client only (no MCP server)')
-  .argument('<spec>', 'OpenAPI spec URL or local file path')
-  .option('-o, --output <dir>', 'Output directory')
+  .description('Regenerate artifacts in an existing apix project')
+  .argument('[target]', 'Target: all | client | mcp | python', 'all')
+  .option('-d, --dir <dir>', 'Project directory with apix.config.json', '.')
+  .option('-o, --output <dir>', 'Override output directory (defaults to --dir)')
+  .option('-s, --spec <path>', 'Override spec path (defaults to config value)')
   .option('-t, --tags <tags>', 'Filter by tags (comma-separated)')
   .action(generateCommand);
 

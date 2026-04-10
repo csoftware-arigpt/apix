@@ -2,6 +2,7 @@ import express from 'express';
 import type { OpenAPIDocument } from '../shared/openapi.js';
 import { extractOperations } from '../shared/openapi.js';
 import { generateFakeData } from './faker.js';
+import { validateRequest } from './middleware.js';
 import { logger } from '../cli/utils/logger.js';
 import chalk from 'chalk';
 import type { MockServerOptions } from './server.js';
@@ -41,7 +42,7 @@ export function createMockApp(
       `  ${chalk.green(op.method.toUpperCase().padEnd(7))} ${op.path.padEnd(35)} → ${statusCode} (${desc})`
     );
 
-    app[method](expressPath, (_req, res) => {
+    app[method](expressPath, validateRequest(op), (_req, res) => {
       if (statusCode === 204) {
         res.status(204).end();
         return;

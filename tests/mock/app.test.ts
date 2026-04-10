@@ -188,4 +188,15 @@ describe('createMockApp', () => {
     const res = await fetch(`${baseUrl}/unknown`);
     expect(res.status).toBe(404);
   });
+
+  it('returns 400 when a required body is missing on POST', async () => {
+    const res = await fetch(`${baseUrl}/pets`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    });
+    expect(res.status).toBe(400);
+    const data = (await res.json()) as { error: string };
+    expect(data.error).toMatch(/body/i);
+  });
 });
